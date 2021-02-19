@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <HelloWorld msg="child component" />
   </div>
 </template>
 
@@ -16,3 +15,9 @@ export default {
   }
 };
 </script>
+<style lang="scss">
+body {
+  background: url("../assets/img/Bg.jpg") no-repeat fixed center top/100% auto
+    #2b0d02;
+}
+</style>
