@@ -6,6 +6,11 @@
 
 <script>
 export default {
-  name: "Product"
+  name: "Product",
+  created() {
+    this.$store.dispatch("loadProducts");
+    let products = this.$store.getters;
+    console.log(products);
+  }
 };
 </script>
