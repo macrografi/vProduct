@@ -12,6 +12,11 @@ export default {
   name: "Home",
   components: {
     HelloWorld
+  },
+  created() {
+    this.$store.dispatch("loadCarousels");
+    let carousels = this.$store.getters;
+    console.log(carousels);
   }
 };
 </script>

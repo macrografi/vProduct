@@ -1,30 +1,27 @@
 import Vue from "vue";
 
 const state = {
-  products: []
+  carousel: []
 };
-
 const getters = {
-  products: state => state.products
+  carousel: state => state.carousel
 };
-
 const actions = {
-  loadProducts({ commit }) {
-    Vue.axios.get("http://localhost:8000/products").then(resp => {
+  loadCarousels({ commit }) {
+    Vue.axios.get("http://localhost:8000/carousels").then(resp => {
       let data = resp.data;
 
       if (data) {
-        commit("SET_PRODUCTS", data);
+        commit("SET_CAROUSEL", data);
       } else {
         console.log("not found data");
       }
     });
   }
 };
-
 const mutations = {
-  SET_PRODUCTS(state, products) {
-    state.products = products;
+  SET_CAROUSEL(state, carousel) {
+    state.carousel = carousel;
   }
 };
 
