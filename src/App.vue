@@ -1,12 +1,6 @@
 <template>
   <div class="container" id="app">
-    <canvas
-      id="myCanvas"
-      width="100%"
-      height="100%"
-      style="background:rgba(0,0,0,0.5); position: fixed; top:0; left:0; width:100%; height:100%;"
-    >
-    </canvas>
+    <canvas id="canvas" style="background:rgba(0,0,0,0.5); position: fixed; top:0; left:0;"></canvas>
     <header class="d-flex align-items-center">
       <router-link class="logo justify-content-start" to="/">
         <i class="first-text ml-3">Cage Works</i><i> - Wooden Works</i>
@@ -79,6 +73,18 @@
     </footer>
   </div>
 </template>
+<script>
+export default {
+  mounted() {
+    let canvas = document.getElementById('canvas');
+    let ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    this.vueCanvas = ctx;
+  },
+};
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
