@@ -1,97 +1,103 @@
 <template>
-  <div class="container" id="app">
-    <canvas id="canvas" style="background:rgba(0,0,0,0.5); position: fixed; top:0; left:0;"></canvas>
-    <header class="d-flex align-items-center">
-      <router-link class="logo justify-content-start" to="/">
-        <i class="first-text ml-3">Cage Works</i><i> - Wooden Works</i>
-      </router-link>
-    </header>
-    <div class="nav-scroller">
-      <b-navbar toggleable="lg" type="light" variant="light">
-        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-        <b-collapse id="nav-collapse" is-nav>
-          <b-navbar-nav class="ml-auto d-flex align-items-center">
-            <li>
-              <router-link to="/">Home</router-link>
-            </li>
-            <li>
-              <router-link to="/about">About Cage Works</router-link>
-            </li>
-            <li>
-              <router-link to="/product">Product</router-link>
-            </li>
-            <b-nav-item-dropdown text="Products" right>
+  <div id="app">
+    <!--    <panel></panel>
+    <viewport></viewport>-->
+    <particle></particle>
+    <div class="container position-relative">
+      <header class="d-flex align-items-center">
+        <router-link class="logo justify-content-start" to="/">
+          <i class="first-text ml-3">Cage Works</i><i> - Wooden Works</i>
+        </router-link>
+      </header>
+      <div class="nav-scroller">
+        <b-navbar toggleable="lg" type="light" variant="light">
+          <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+          <b-collapse id="nav-collapse" is-nav>
+            <b-navbar-nav class="ml-auto d-flex align-items-center">
               <li>
-                <router-link class="dropdown-item" to="/product">Gold finch Cages</router-link>
+                <router-link to="/">Home</router-link>
               </li>
               <li>
-                <router-link class="dropdown-item" to="/product">Green finch Cages</router-link>
+                <router-link to="/about">About Cage Works</router-link>
               </li>
               <li>
-                <router-link class="dropdown-item" to="/product">Canary Cages</router-link>
+                <router-link to="/product">Product</router-link>
               </li>
+              <b-nav-item-dropdown text="Products" right>
+                <li>
+                  <router-link class="dropdown-item" to="/product">Gold finch Cages</router-link>
+                </li>
+                <li>
+                  <router-link class="dropdown-item" to="/product">Green finch Cages</router-link>
+                </li>
+                <li>
+                  <router-link class="dropdown-item" to="/product">Canary Cages</router-link>
+                </li>
+                <li>
+                  <router-link class="dropdown-item" to="/product">Crossbred Cages</router-link>
+                </li>
+              </b-nav-item-dropdown>
               <li>
-                <router-link class="dropdown-item" to="/product">Crossbred Cages</router-link>
+                <router-link to="/contact">Contact</router-link>
               </li>
-            </b-nav-item-dropdown>
-            <li>
-              <router-link to="/contact">Contact</router-link>
-            </li>
-          </b-navbar-nav>
-        </b-collapse>
-      </b-navbar>
-    </div>
-    <div class="main-content">
-      <div class="tile-bg">
-        <router-view />
+            </b-navbar-nav>
+          </b-collapse>
+        </b-navbar>
       </div>
-    </div>
-    <footer>
-      <div class="row">
-        <div class="col-sm-12 col-lg-6">
-          <ul class="d-flex ml-2">
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">About Cage Works</a>
-            </li>
-            <li>
-              <a href="#">Product</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-sm-12 col-lg-6">
-          <p class="text-right mr-3">
-            © 2020 - Istanbul Cage Works
-          </p>
+      <div class="main-content">
+        <div class="tile-bg">
+          <router-view />
         </div>
       </div>
-    </footer>
+      <footer>
+        <div class="row">
+          <div class="col-sm-12 col-lg-6">
+            <ul class="d-flex ml-2">
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">About Cage Works</a>
+              </li>
+              <li>
+                <a href="#">Product</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-12 col-lg-6">
+            <p class="text-right mr-3">
+              © 2020 - Istanbul Cage Works
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
   </div>
 </template>
-<script>
-export default {
-  mounted() {
-    let canvas = document.getElementById('canvas');
-    let ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    this.vueCanvas = ctx;
-  },
-};
-</script>
 <style lang="scss">
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  margin: 0;
+}
+canvas {
+  position: relative;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  height: 100%;
+
   header {
     height: 55px;
     .logo {
@@ -208,3 +214,15 @@ export default {
   }
 }
 </style>
+<script>
+/*import ViewPort from '@/components/ViewPort.vue';
+import ControlPanel from '@/components/ControlPanel.vue';*/
+import Particle from '@/components/Particle';
+export default {
+  components: {
+    /*    viewport: ViewPort,
+    panel: ControlPanel,*/
+    particle: Particle,
+  },
+};
+</script>
