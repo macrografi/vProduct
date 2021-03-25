@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <!--    <panel></panel>
-    <viewport></viewport>-->
     <particle></particle>
     <div class="container position-relative">
       <header class="d-flex align-items-center">
@@ -82,7 +80,6 @@ html,
 body {
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 body {
   margin: 0;
@@ -215,13 +212,9 @@ canvas {
 }
 </style>
 <script>
-/*import ViewPort from '@/components/ViewPort.vue';
-import ControlPanel from '@/components/ControlPanel.vue';*/
 import Particle from '@/components/Particle';
 export default {
   components: {
-    /*    viewport: ViewPort,
-    panel: ControlPanel,*/
     particle: Particle,
   },
 };
