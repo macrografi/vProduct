@@ -30,9 +30,6 @@ export default {
 };
 </script>
 <style lang="scss">
-body {
-  background: url('../assets/img/Bg.jpg') no-repeat fixed center top/100% auto #2b0d02;
-}
 .read-head {
   width: 100%;
   position: relative;

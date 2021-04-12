@@ -71,7 +71,6 @@ const mutations = {
     const geometry = new BufferGeometry();
     const vertices = [];
     const textureLoader = new TextureLoader();
-
     const sprite1 = textureLoader.load('img/_leaf1.b4b8a6e7.png');
     const sprite2 = textureLoader.load('img/_leaf2.32b29551.png');
     const sprite3 = textureLoader.load('img/_leaf3.61e1cdb6.png');
